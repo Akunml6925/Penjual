@@ -44,10 +44,6 @@
     let elemenemail = document.getElementById('input-email');
     let elemennoTlpn = document.getElementById('input-noTlpn');
     
-    tombolTambah.addEventListener('click', async function (e) {
-      e.preventDefault();
-      tombolTambah.setAttribute('disabled' 'disabled');
-      loader.style.display = "block";
       
       
       await tambahPenjual(elemenNamaPenjual.value, elemenalamat.value, elemenemail.value,elemennoTlpn.value,);
