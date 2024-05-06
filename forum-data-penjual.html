@@ -37,12 +37,12 @@
   <a href="index.html">penjualan</a>
   
   <script type="module">
-    import { tambahProduk } from './main.js';
+    import { tambahPenjual } from './main.js';
     
-    let tombolTambah = document.getElementById('tombol-nama');
-    let elemenNamaProduk = document.getElementById('input-alamat');
-    let elemenHarga = document.getElementById('input-email');
-    let elemenstok = document.getElementById('input-noTlpn');
+    let tombolnama = document.getElementById('tombol-nama');
+    let elemenalamat = document.getElementById('input-alamat');
+    let elemenemail = document.getElementById('input-email');
+    let elemennoTlpn = document.getElementById('input-noTlpn');
     
     tombolTambah.addEventListener('click', async function (e) {
       e.preventDefault();
@@ -50,7 +50,7 @@
       loader.style.display = "block";
       
       
-      await tambahProduk(elemenNamaPenjual.value, elemenHarga.value, elemenstok.value);
+      await tambahPenjual(elemenNamaPenjual.value, elemenalamat.value, elemenemail.value,elemennoTlpn.value,);
       window.location.href = 'index.html';
     });
   </script>
