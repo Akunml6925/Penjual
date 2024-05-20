@@ -39,10 +39,10 @@
     import { ambilPenjual, ubahPenjual } from './main.js';
 
     let tombolUbah = document.getElementById('tombol-ubah');
-    let elemenNamaPenjual = document.getElementById('input-nama');
+    let elemennamaPenjual = document.getElementById('input-nama');
     let elemenalamat = document.getElementById('input-alamat');
     let elemenemail = document.getElementById('input-email');
-    let elemenNoTlpn = document.getElementById('input-noTlpn');
+    let elemennoTlpn = document.getElementById('input-noTlpn');
     let loader = document.getElementById('loader');
     const queryString = window.location.search
     const parameterURL = new URLSearchParams(queryString);
@@ -57,7 +57,7 @@
 
     tombolUbah.addEventListener('click', async function(el) {
       el.preventDefault();
-      await ubahPenjual(docId, elemenNamaPenjual.value, elemenalamat.value, elemenemail.value, elemenNoTlpn.value);
+      await ubahPenjual(docId, elemennamaPenjual.value, elemenalamat.value, elemenemail.value, elemennoTlpn.value);
       window.location.href = 'index.html';
     });
   </script>

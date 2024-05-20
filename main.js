@@ -36,7 +36,7 @@ export async function ambilDaftarPenjual() {
   cuplikanKueri.forEach((dok) => {
     hasil.push({
       id: dok.id,
-      nama: dok.data().Nama,
+      nama: dok.data().nama,
       alamat: dok.data().alamat,
       email: dok.data().email,
       noTlpn: dok.data().noTlpn,
@@ -53,7 +53,7 @@ export function formatAngka(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
 
-export async function tambahPenjual(Nama, alamat, email, noTlpn) {
+export async function tambahPenjual(nama, alamat, email, noTlpn) {
   try {
     const dokRef = await addDoc(collection(db, 'penjual'), {
       nama: nama,

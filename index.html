@@ -17,7 +17,8 @@
 
   <table class="table" id="daftar-pembeli">
     <thead>
-      <tr
+      <tr>
+        <th scope="col">No</th>
         <th scope="col">Nama</th>
         <th scope="col">Alamat</th>
         <th scope="col">email</th>
@@ -75,7 +76,7 @@
         elemenpenjual.append(
           '<tr>' +
           '<th>' + nomor + '</th>' +
-          '<td>' + data.Nama + '</td>' +
+          '<td>' + data.nama + '</td>' +
           '<td>' + data.alamat + '</td>' +
           '</td>'+ data.email + '</td>' +
           '<td>' + data.noTlpn + '</td>' + '<td class="stack-up">' +
@@ -96,7 +97,7 @@
       })
 
       $('.link-ubah').click(async function() {
-        window.location.replace('ubah-produk.html?docId=' + $(this).attr('data'));
+        window.location.replace('Ubah-penjual.html?docId=' + $(this).attr('data'));
       })
 
       $('#loader').hide();
