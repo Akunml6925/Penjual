@@ -12,21 +12,21 @@ import {
   updateDoc
 } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyBlahoJjeK0jyO-4tZlAiPRjym6Mxn2P6o",
-  authDomain: "insan-cemerlang-59727.firebaseapp.com",
-  projectId: "insan-cemerlang-59727",
-  storageBucket: "insan-cemerlang-59727.appspot.com",
-  messagingSenderId: "839220708273",
-  appId: "1:839220708273:web:4d1dde85cf74aebd1d7390",
-  measurementId: "G-1VP3D59R0T"
+  apiKey: "AIzaSyA-wvBGzlYI9NHjVZBq7wbUHtEWrN3AFI8",
+  authDomain: "pasarbarokah-56d6c.firebaseapp.com",
+  projectId: "pasarbarokah-56d6c",
+  storageBucket: "pasarbarokah-56d6c.appspot.com",
+  messagingSenderId: "316348641371",
+  appId: "1:316348641371:web:5ad38a561e7d73744acf7e",
+  measurementId: "G-W3SBB85TF1"
 };
 
 // Inisialisasi Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+//ambildatabase
 export async function ambilDaftarPenjual() {
   const refDokumen = collection(db, "penjual");
   const kueri = query(refDokumen, orderBy("nama"));
@@ -36,7 +36,7 @@ export async function ambilDaftarPenjual() {
   cuplikanKueri.forEach((dok) => {
     hasil.push({
       id: dok.id,
-      nama: dok.data().nama,
+      nama: dok.data().Nama,
       alamat: dok.data().alamat,
       email: dok.data().email,
       noTlpn: dok.data().noTlpn,
@@ -47,12 +47,13 @@ export async function ambilDaftarPenjual() {
 
   return hasil;
 }
+//#########$$$###$$#####
 
 export function formatAngka(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
 
-export async function tambahPenjual(nama, alamat, email, noTlpn) {
+export async function tambahPenjual(Nama, alamat, email, noTlpn) {
   try {
     const dokRef = await addDoc(collection(db, 'penjual'), {
       nama: nama,

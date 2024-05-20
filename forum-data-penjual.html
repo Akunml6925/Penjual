@@ -16,19 +16,19 @@
   <form class="mb-3">
     <div class="mb-3">
       <label class="form-label">Nama</label>
-      <input type="text" class="form-control" id="input-nama">
+      <input type="text" class="form-control" id="input-Nama">
     </div>
     <div class="mb-3">
       <label class="form-label">alamat</label>
       <input type="text" class="form-control" id="input-alamat">
     </div>
      <div class="mb-3">
-      <label class="form-email">email</label>
-      <input type="text" class="form-control" id="input-stok">
+      <label class="form-label">email</label>
+      <input type="text" class="form-control" id="input-email">
     </div>
     </div class="mb-3">
       <label class="form-label">no tlpn</label>
-      <input type="text" class="form-control" id="input-noTLpn">
+      <input type="text" class="form-control" id="input-noTlpn">
     </div>
     <button type="submit" class="btn btn-primary" id="tombol-tambah">Simpan</button>
   </form>
@@ -39,15 +39,19 @@
   <script type="module">
     import { tambahPenjual } from './main.js';
     
-    let tombolnama = document.getElementById('tombol-nama');
+    let tombolTambah = document.getElementById('tombol-tambah');
+    let elemenNama = document.getElementById('input-Nama');
     let elemenalamat = document.getElementById('input-alamat');
     let elemenemail = document.getElementById('input-email');
     let elemennoTlpn = document.getElementById('input-noTlpn');
     
+    tombolTambah.addEventListener('click', async function (e) {
+      e.preventDefault();
       
       
-      await tambahPenjual(elemenNamaPenjual.value, elemenalamat.value, elemenemail.value,elemennoTlpn.value,);
-      window.location.href = 'index.html'
+      
+      await tambahPenjual(elemenNama.value, elemenalamat.value, elemenemail.value,elemennoTlpn.value,);
+      window.location.href = 'index.html';
     });
   </script>
   
