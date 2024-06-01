@@ -27,7 +27,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 //ambildatabase
-export async function ambilDaftarPenjual() {
+export async function ambilDaftarpenjual() {
   const refDokumen = collection(db, "penjual");
   const kueri = query(refDokumen, orderBy("nama"));
   const cuplikanKueri = await getDocs(kueri);
@@ -53,7 +53,7 @@ export function formatAngka(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
 
-export async function tambahPenjual(nama, alamat, email, noTlpn) {
+export async function tambahpenjual(nama, alamat, email, noTlpn) {
   try {
     const dokRef = await addDoc(collection(db, 'penjual'), {
       nama: nama,
@@ -67,11 +67,11 @@ export async function tambahPenjual(nama, alamat, email, noTlpn) {
   }
 }
 
-export async function hapusPenjual(docId) {
+export async function hapuspenjual(docId) {
   await deleteDoc(doc(db, "penjual", docId));
 }
 
-export async function ubahPenjual(docId, nama, alamat, email, noTlpn) {
+export async function ubahpenjual(docId, nama, alamat, email, noTlpn) {
   await updateDoc(doc(db, "penjual", docId), {
     nama: nama,
     alamat: alamat,
@@ -80,7 +80,7 @@ export async function ubahPenjual(docId, nama, alamat, email, noTlpn) {
   });
 }
 
-export async function ambilPenjual(docId) {
+export async function ambilpenjual(docId) {
   const docRef = await doc(db, "penjual", docId);
   const docSnap = await getDoc(docRef);
 

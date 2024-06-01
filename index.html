@@ -63,11 +63,11 @@
   </style>
 
   <script type="module">
-    import { ambilDaftarPenjual, formatAngka, hapusPenjual} from './main.js';
+    import { ambilDaftarpenjual, formatAngka, hapuspenjual} from './main.js';
 
     $(document).ready(async function() {
       let elemenpenjual = $("#daftar-pembeli > tbody");
-      let daftarPenjual = await ambilDaftarPenjual();
+      let daftarPenjual = await ambilDaftarpenjual();
       let nomor = 1;
 
 
@@ -92,7 +92,7 @@
       });
 
       $('.tombol-hapus').click(async function() {
-        await hapusPenjual($(this).attr('data'));
+        await hapuspenjual($(this).attr('data'));
         location.reload();
       })
 

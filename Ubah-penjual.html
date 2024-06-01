@@ -22,8 +22,8 @@
       <input type="text" class="form-control" id="input-alamat">
     </div>
      <div class="mb-3">
-      <label class="form-label">gmail</label>
-      <input type="text" class="form-control" id="input-gmail">
+      <label class="form-label">email</label>
+      <input type="text" class="form-control" id="input-email">
     </div>
     <div class="mb-3">
       <label class="form-label">noTlpn</label>
@@ -36,10 +36,10 @@
   <a class="mt-1" href="index.html">Lihat Daftar Penjual</a>
 
   <script type="module">
-    import { ambilPenjual, ubahPenjual } from './main.js';
+    import { ambilpenjual, ubahpenjual } from './main.js';
 
     let tombolUbah = document.getElementById('tombol-ubah');
-    let elemennamaPenjual = document.getElementById('input-nama');
+    let elemennamapenjual = document.getElementById('input-nama');
     let elemenalamat = document.getElementById('input-alamat');
     let elemenemail = document.getElementById('input-email');
     let elemennoTlpn = document.getElementById('input-noTlpn');
@@ -47,9 +47,9 @@
     const queryString = window.location.search
     const parameterURL = new URLSearchParams(queryString);
     const docId = parameterURL.get('docId')
-    const penjual = await ambilPenjual(docId);
+    const penjual = await ambilpenjual(docId);
 
-    elemenNamaPenjual.value = penjual.nama;
+    elemennamapenjual.value = penjual.nama;
     elemenalamat.value = penjual.alamat;
     elemenemail.value = penjual.email;
     elemennoTlpn.value = penjual.noTlpn;
@@ -57,7 +57,7 @@
 
     tombolUbah.addEventListener('click', async function(el) {
       el.preventDefault();
-      await ubahPenjual(docId, elemennamaPenjual.value, elemenalamat.value, elemenemail.value, elemennoTlpn.value);
+      await ubahpenjual(docId, elemennama.value, elemenalamat.value, elemenemail.value, elemennoTlpn.value);
       window.location.href = 'index.html';
     });
   </script>
